@@ -45,6 +45,7 @@ class CropDusterWidget(GenericForeignFileWidget):
             sizes = sizes_callable(instance, related=related_object)
         ctx.update({
             'sizes': json.dumps(sizes),
+            'raw_sizes': self.sizes
         })
         return ctx
 

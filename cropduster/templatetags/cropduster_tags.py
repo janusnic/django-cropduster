@@ -87,3 +87,23 @@ def get_crop(image, crop_name, exact_size=False, **kwargs):
         })
 
     return data
+
+
+@register.assignment_tag
+def get_sizes(sizes):
+    """
+    @type: sizes: Iterable[cropduster.resizing.Size]
+    """
+
+    print()
+    print("sizes:", type(sizes), sizes)
+    print()
+    import pdb
+    pdb.set_trace()
+    print()
+    
+    szs = []
+    for size in sizes:
+        szs += size
+
+    return szs

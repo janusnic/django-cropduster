@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load url from future %}
+{% load get_sizes from cropduster_tags %}
 
 <div class="module cropduster-form nested-inline-form" id="{{ inline_admin_formset.formset.prefix }}-group" data-media-url="{{ media_url }}">
 
@@ -16,6 +17,13 @@
     <div class="rounded-button">Upload Image</div>
     <div style="clear:both; height:3px"></div>
 </a>
+
+<p class="grp-help cropduster-sizes-help">
+    {% get_sizes raw_sizes as thumb_sizes %}
+    {% for sz in thumb_sizes %}
+    Allowable sizes: "{{ sz }}"
+    {% endfor %}
+</p>
 
 {% include "cropduster/inline.html" %}
 
